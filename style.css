@@ -1,0 +1,422 @@
+/*adding font liberary*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*choosing the font type*/
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* to make the inner elements in the parent elements borders*/
+    scroll-behavior: smooth;
+}
+
+/*styling of the head bar*/
+header{
+    background-color:rgb(182, 226, 240) ;
+    width: 100%;
+    position: fixed;
+    z-index:999 ;/*to make the header fixed and always appears at the top of the page*/
+    display: flex;/*controls the shape of the element in the page*/
+    justify-content: space-between;/*space betwwen the child elemnets uj the parent element*/
+    align-items: center;
+    padding: 10px 200px;/*the first value for top&bottom anf the second on for right&left*/
+}
+
+/*website name "travel" style*/
+.logo{
+    text-decoration: none;
+    color: rgb(2, 3, 74);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2.4em;/*size relative to the default body size*/
+}
+/*website pages in the head bar*/
+.navigation a {
+    color: rgb(2, 3, 74);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding-left: 30px;
+}
+/*color of the link of the pages in the head bar*/
+.navigation a:hover{
+    color: rgb(138, 137, 138);
+}
+/*home page style*/
+section{
+    padding: 100px 200px; 
+}
+
+/*style of home page*/
+.main{
+    width: 100%;
+    min-height: 100vh; /*100 view port(vh) or more according to the child elements*/
+    display: flex;
+    align-items: center; /*connected with display flex*/
+    background: url(img/bbg.jpg) no-repeat;
+    background-size: cover; /*cover all the page*/
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main h2{
+    color:aliceblue ;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+.main h2 span{
+    display:inline-block; /*because the span is inline element so to give margine otmust be blocked*/
+    margin-top: 10px;
+    color:rgb(2, 3, 74) ;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.main h3{
+    color:aliceblue;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main-bottom{
+     color: aliceblue;
+     background-color:rgb(14, 1, 65) ;
+     text-decoration: none;
+     font-size: 1.1em;
+     font-weight: 600;
+     display: inline-block;
+     padding: 0.9375em 2.187em;
+     letter-spacing: 1px;
+     border-radius: 15px;
+     margin-bottom: 40px;
+     transition: 0.7s ease; /*to make the action of the bottom smooth and in some time*/
+}
+
+.main-bottom:hover{
+    background-color:  rgb(184, 173, 190);
+    transform: scale(1.1); /*give the buttom the action when the curser is over it*/
+}
+
+
+/*survices styling*/
+/*for the titel of survices container*/
+.text{
+    font-size: 1.7em;
+    line-height: 1.1;
+}
+
+/*style the survices ti be one beside the other*/
+.row-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto)); /*making the items of the class in one row instead in one column*/
+    grid-gap: 2rem; /*making a space between ehach element in the class*/
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+/*style the container of the survices and its description */
+/*making each survice as a bottom with the background color*/
+.container-box{
+    background: var(--bg-color); 
+    border: 1px solid #f0eded;
+    padding: 50px 10px;
+    border-radius: 4px;
+    transition: 0.7s ease; /*time of moving of the bottom image*/
+    cursor: pointer; /*change the shape of the cursor on the bottom image*/
+}
+
+/*style the container of the image only*/
+.container-image img{
+    height: 85px;
+    width: 85px;
+    padding: 15px;
+    background: var(--bg-color);
+    box-shadow: 5px 10px 30px rgb(85 85 85 /20%);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+/*style the title of each image*/
+.container-box h4{
+    color:rgba(85, 6, 242, 0.861) ;
+    font-size: 24px;
+    font-weight: 600; 
+    margin-bottom: 8px;
+}
+/*style the subtitle of each image*/
+.container-box p{
+    font-size: 15px;
+    color: var(--second-color);
+}
+
+/*bottom effect*/
+.container-box:hover{
+    box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%); /*shadow color when the image is selected*/
+    border: 1px solid transparent; /*border color when the image is selected*/
+    transform: translateY(-3px);   /*the quantity of transforming of the bottom*/
+}
+
+/*styling the title of the packages*/
+.title{
+    text-align: center;
+}
+.title h2{
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+/*styling the images of the package and its description to be beside each other*/
+.package-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto)); /*making the items of the class in one row instead in one column*/
+    grid-gap: 2rem; /*making a space between ehach element in the class*/
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+/*styling each image in the package*/
+.thum{
+    position: relative;
+    will-change: filter;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.thum img{
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+.thum h3{
+    /*to make the price on the image of the package*/
+    position: absolute;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: right;
+    color:aliceblue;
+    top: 36px;
+    right: 40px;
+}
+
+/*the description of each photo and stars*/
+.dest-content{
+    display: flex;  /*the description under each photo in the right side*/
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+/*styling stars only*/
+.stars i{
+    color: rgb(159, 158, 158);
+    font-size: 20px;
+}
+/*styling the location of description only*/
+.location h4{
+    color: rgb(4, 6, 133) ;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+/*styling the time of description only*/
+.location p{
+    font-size: 15px;
+    color:rgb(138, 137, 138);
+}
+
+/*transforming the image of the package*/
+.thum:hover{
+    filter: brightness(100%) hue-rotate(20deg);
+    transform: scale(1.04);
+}
+
+/*styling the destination*/
+.destination-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(340px,auto)); /*making the items of the class in one row instead in one column*/
+    grid-gap: 2rem; /*making a space between ehach element in the class*/
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+/*styling each image in the destination*/
+.col-content{
+    position: relative;
+}
+
+.col-content img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    filter: brightness(80%);
+    transition: all .3s cubic-bezier(0.495, 0.05, 0.55, 0.95);
+    will-change: filter;
+}
+
+/*styling the description of each destination*/
+.col-content h5{
+    position: absolute;
+    font-size: 22px;
+    font-weight: 600;
+    color:aliceblue ;
+    left: 15px;
+    bottom: 60px;
+}
+.col-content p{
+    position: absolute;
+    font-size: 15px;
+    font-weight: 300;
+    color:aliceblue ;
+    left: 15px;
+    bottom: 30px;
+    letter-spacing: 3px;
+} 
+
+.col-content img:hover{
+    filter: brightness(100%);
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+/*styling sending am email*/
+.nesletter{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 3rem;
+}
+.newstext h2{
+    font-size: 3.3em;
+    color: rgb(14, 1, 65);
+    margin-bottom: 5px;
+}
+.newstext p{
+    font-size: 1.5em;
+    color: rgb(138, 137, 138);
+    line-height: 30px;
+}
+
+/*styling for email box ans submit buttom*/
+.nesletter form{
+    max-width: 100%;
+    width: 450px;
+    position: relative;
+}
+
+/*styling email*/
+.nesletter form input:first-child{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 150px 20px 30px;
+    box-shadow: 5px 10px 30px rgb(193, 192, 192);
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+
+/*styling the submit bottom*/
+.nesletter form input:last-child{
+    color: aliceblue;
+     background-color:rgb(14, 1, 65) ;
+     font-size: 1.1em;
+     font-weight: 600;
+     position: absolute;
+     display: inline-block;
+     outline: none;
+     border: none;
+     padding: 14px 30px;
+     letter-spacing: 2px;
+     border-radius: 15px;
+     top: 3px;
+     right: 2px;
+     cursor: pointer;
+     transition: 0.7s ease;
+}
+
+.nesletter form input:last-child:hover{
+    background-color:  rgb(184, 173, 190);
+    transform: scale(1.1); /*give the buttom the action when the curser is over it*/
+} 
+
+ul{
+    list-style-type: none;
+}
+
+#contact{
+    background-color: rgb(14, 1, 65);
+}
+
+.main2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer{
+    padding: 20px  0px ;
+}
+
+.list{
+    width: 25%;
+}
+
+.list h4{
+    font-size: 21px;
+    color: aliceblue;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.list ul li:not(last-child){
+    margin-bottom: 16px;
+}
+
+.list ul li a{
+    color: rgb(118, 136, 152);
+    font-size: 0.9em;
+    display: block;
+    transition: 0.3s;
+}
+
+.list ul li a:hover{
+    color:#f0eded;
+    transform: translateX(14px); /*ezaha fu etgah x*/
+}
+
+.social a{
+    color: rgb(118, 136, 152);
+    font-size: 1.7em;
+    padding-right: 30px;
+    transition: .3s ;
+}
+
+.social a:hover{
+    color:#f0eded;
+}
+
+.end-text{
+    text-align: center;
+    padding-top: 90px;
+}
+
+.end-text p{
+    color: aliceblue;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+@media(max-width:575px){
+    .list{
+        width: 100%;
+    }
+    .nesletter form{
+        width: 350px;
+    }
+}
